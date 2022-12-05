@@ -42,8 +42,8 @@ fi
 _echo "Generate the jooq package"
 jbang -Djooq.version=3.15.12 --deps org.postgresql:postgresql:42.4.1 codegen@jooq src/main/resources/jooq-config.xml
 
-_echo "Format the code by prettier"
-mvn prettier:write
+_echo "Format the code by ktlint"
+mvn ktlint:format
 
 _echo "git add jooq package"
-git add src/main/java/com/zlargon/springdemo/jooq
+git add src/main/kotlin/com/zlargon/springdemo/jooq

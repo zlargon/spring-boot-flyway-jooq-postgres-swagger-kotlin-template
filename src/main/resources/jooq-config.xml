@@ -1,3 +1,4 @@
+<!-- https://www.jooq.org/doc/latest/manual/code-generation/codegen-configuration/ -->
 <configuration>
   <!-- jdbc config -->
   <jdbc>
@@ -7,6 +8,9 @@
   </jdbc>
 
   <generator>
+    <!-- https://www.jooq.org/doc/latest/manual/code-generation/kotlingenerator/ -->
+    <name>org.jooq.codegen.KotlinGenerator</name>
+
     <!-- database options -->
     <database>
       <name>org.jooq.meta.postgres.PostgresDatabase</name>
@@ -17,15 +21,21 @@
 
     <!-- generate options -->
     <generate>
-      <deprecated>true</deprecated>
-      <instanceFields>true</instanceFields>
-      <pojos>false</pojos>
+      <!-- Tell the KotlinGenerator to generate properties in addition to methods for these paths. Default is true. -->
+      <implicitJoinPathsAsKotlinProperties>true</implicitJoinPathsAsKotlinProperties>
+
+      <!--  Workaround for Kotlin generating setX() setters instead of setIsX() in byte code for mutable properties called
+            <code>isX</code>. Default is true. -->
+      <kotlinSetterJvmNameAnnotationsOnIsPrefix>true</kotlinSetterJvmNameAnnotationsOnIsPrefix>
+
+      <!-- Generate POJOs as data classes, when using the KotlinGenerator. Default is true. -->
+      <pojosAsKotlinDataClasses>true</pojosAsKotlinDataClasses>
     </generate>
 
     <!-- target -->
     <target>
       <packageName>com.zlargon.springdemo.jooq</packageName>
-      <directory>src/main/java</directory>
+      <directory>src/main/kotlin</directory>
     </target>
   </generator>
 </configuration>
