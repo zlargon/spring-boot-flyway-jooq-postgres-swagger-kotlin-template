@@ -5,7 +5,7 @@
     "coverage": "mvn verify && open target/site/jacoco/index.html",
     "doc": "open http://localhost:8080/swagger-ui.html",
     "clean": "mvn clean",
-    "format": "mvn prettier:write",
+    "format": "mvn ktlint:format",
     "jooq:codegen": "scripts/jooq_codegen.sh",
     "deps": "mvn dependency:tree",
     "up": "docker compose --project-name springboot-demo up -d",
