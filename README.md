@@ -12,7 +12,6 @@ https://start.spring.io/#!type=maven-project&language=kotlin&platformVersion=2.7
 | ktlint          | Kotlin code format and lint      |
 | Spring Web MVC  |                                  |
 | Spring Devtools | Hot Reload Spring boot           |
-| Lombok          | Prevent boilerplate code         |
 | Docker          | Run SQL Database with container  |
 | Postgres        | SQL Database                     |
 | Flyway          | SQL Database Migration           |
@@ -111,7 +110,6 @@ pnpm doc           # open swagger-ui website for API documentation
 
 - tools
 
-  - lombok
   - spring-boot-devtools
   - spring-boot-starter-actuator
 
