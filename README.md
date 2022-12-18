@@ -56,6 +56,7 @@ pnpm start         # run spring boot application
 pnpm test          # run tests by console launcher
 pnpm coverage      # run tests with code coverage and open the report website
 pnpm clean         # clean the project
+pnpm lint          # lint the source code
 pnpm format        # format the source code
 pnpm jooq:codegen  # run script to update jooq generated code
 pnpm doc           # open swagger-ui website for API documentation
